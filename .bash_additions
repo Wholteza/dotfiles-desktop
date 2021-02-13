@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Bash prompt
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
+fi
+
+# Start GPG client for use with yubikey
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+
+# Pyenv stuff
+export PATH="/home/wholteza/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# Update git repos on start
+~/.config/wholteza/gitsync/run.sh
+
+#Start tmux
+tmux
