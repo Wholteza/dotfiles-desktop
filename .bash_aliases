@@ -17,6 +17,7 @@ alias edit-bash='vim ~/.bash_additions && source ~/.bashrc'
 alias edit-awesome='vim ~/.config/awesome/rc.lua && source ~/.bashrc'
 alias edit-gitsync='vim ~/.config/wholteza/gitsync/run.sh && source ~/.bashrc'
 alias edit-vim='vim ~/.vimrc && source ~/.bashrc'
+alias edit-tmux='vim ~/.tmux.conf && source ~/.bashrc'
 
 # Custom commands
 alias gitsync='~/.config/wholteza/gitsync/run.sh'
