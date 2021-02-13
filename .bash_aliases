@@ -1,5 +1,5 @@
 #!/bin/bash
-#TEST
+
 # Wireguard
 alias wg-up-de='wg-quick up de'
 alias wg-down-de='wg-quick down de'
@@ -16,3 +16,6 @@ alias edit-prompt='vim ~/.bash_prompt && source ~/.bashrc'
 alias edit-bash='vim ~/.bash_additions && source ~/.bashrc'
 alias edit-awesome='vim ~/.config/awesome/rc.lua && source ~/.bashrc'
 alias edit-gitsync='vim ~/.config/wholteza/gitsync/run.sh && source ~/.bashrc'
+
+# Custom commands
+alias gitsync='~/.config/wholteza/gitsync/run.sh'
