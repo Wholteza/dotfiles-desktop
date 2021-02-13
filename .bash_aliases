@@ -19,5 +19,8 @@ alias edit-gitsync='vim ~/.config/wholteza/gitsync/run.sh && source ~/.bashrc'
 alias edit-vim='vim ~/.vimrc && source ~/.bashrc'
 alias edit-tmux='vim ~/.tmux.conf && source ~/.bashrc'
 
+# Screenshots
+alias snip='scrot -s ~/Pictures/Screenshots/scrot-%Y-%m-%d-%H_%M.png'
+
 # Custom commands
 alias gitsync='~/.config/wholteza/gitsync/run.sh'
