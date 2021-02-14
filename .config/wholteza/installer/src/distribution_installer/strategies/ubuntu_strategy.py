@@ -1,4 +1,4 @@
-from src.distribution_installer.utilities.path import get_packages_definitions_directory_path
+from src.utilities.path import get_packages_definitions_directory_path
 from src.package_installer.enums.package_type import PackageType
 from src.package_installer.package_installer_context import ensure as ensure_packages
 
