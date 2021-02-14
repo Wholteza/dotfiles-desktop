@@ -34,7 +34,8 @@ def read(file: Path):
     while get_section_indexes(rows) != None:
         section_indexes = get_section_indexes(rows)
         section_rows = rows[(section_indexes[0] + 1):section_indexes[1]]
+        rows_to_delete = rows[section_indexes[0]:section_indexes[1]+1]
         sections.append("".join(section_rows))
-        for row in section_rows:
+        for row in rows_to_delete:
             rows.remove(row)
     return sections
