@@ -1,0 +1,18 @@
+feh
+vim-gtk
+tmux
+wget
+
+# Yubikey software
+gnupg2
+gnupg-agent
+dirmngr
+cryptsetup
+scdaemon
+pcscd
+secure-delete
+hopenpgp-tools
+yubikey-personalization
+libssl-dev
+swig
+libpcsclite-dev
