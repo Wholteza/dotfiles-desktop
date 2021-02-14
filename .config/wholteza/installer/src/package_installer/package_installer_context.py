@@ -1,3 +1,4 @@
+from pathlib import Path
 from src.package_installer.enums.package_type import PackageType
 from src.package_installer.strategies.snap_package_strategy import ensure as snap_strategy
 from src.package_installer.strategies.apt_package_strategy import ensure as apt_strategy
@@ -8,7 +9,7 @@ package_installer_strategies = {
 }
 
 
-def ensure(package_type: PackageType, packages_definition_file_path: str):
+def ensure(package_type: PackageType, packages_definition_file_path: Path):
     """Ensures that packages are installed on the system
 
     package_type: The type of package that you want to install. Is used to select the proper installation strategy.

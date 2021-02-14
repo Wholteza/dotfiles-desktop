@@ -1,7 +1,8 @@
 import os
+from pathlib import Path
 
 
-def get_packages_from_file(packages_definition_file_path: str):
+def get_packages_from_file(packages_definition_file_path: Path):
     """Returns a list of the names of the packages in the provided file"""
 
     if not os.path.exists(packages_definition_file_path):

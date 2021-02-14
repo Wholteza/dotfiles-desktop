@@ -1,9 +1,10 @@
+from pathlib import Path
 from src.package_installer.utilities.packages_definition_file_reader import get_packages_from_file
 from src.utilities.iterable import to_comma_separated_string
 import os
 
 
-def ensure(path_to_snap_packages_definition: str):
+def ensure(path_to_snap_packages_definition: Path):
     """Ensures that snap packages are installed"""
 
     snap_packages = get_packages_from_file(path_to_snap_packages_definition)

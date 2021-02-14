@@ -1,14 +1,17 @@
-import getpass
+from src.distribution_installer.utilities.path import get_packages_definitions_directory_path
 from src.package_installer.enums.package_type import PackageType
 from src.package_installer.package_installer_context import ensure as ensure_packages
 
-username = getpass.getuser()
-package_definitions_directory = "/home/% s/.config/wholteza/installers/package-definitions" % (
-    username)
+SNAP_PACKAGES_FILENAME = "ubuntu-snap-packages"
+APT_PACKAGES_FILENAME = "ubuntu-apt-packages"
+
+package_definitions_directory = get_packages_definitions_directory_path()
+
 
 package_types = {
-    PackageType.SNAP: package_definitions_directory + "/ubuntu-snap-packages",
-    PackageType.APT: package_definitions_directory + "/ubuntu-apt-packages"
+    PackageType.SNAP: package_definitions_directory.joinpath(SNAP_PACKAGES_FILENAME),
+    PackageType.APT: package_definitions_directory.joinpath(
+        APT_PACKAGES_FILENAME)
 }
 
 
