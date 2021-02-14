@@ -1,16 +1,15 @@
 from pathlib import Path
-import os
-import pathlib
+from typing import List
 from src.file_reader.utilities.file import ensure_exists
 
 SECTION_BEGINNING = ">>>"
 SECTION_END = "<<<"
 
 
-def get_section_indexes(rows: list[str]):
-    for beginning_index, possible_beginning in rows:
+def get_section_indexes(rows: List[str]):
+    for beginning_index, possible_beginning in enumerate(rows):
         if possible_beginning.startswith(SECTION_BEGINNING):
-            for end_index, possible_end in rows:
+            for end_index, possible_end in enumerate(rows):
                 if possible_end.startswith(SECTION_END):
                     return (beginning_index, end_index)
     return None
