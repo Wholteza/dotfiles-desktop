@@ -350,7 +350,7 @@ globalkeys = gears.table.join(
               {description = "show the menubar", group = "launcher"}),
     -- Passmenu
     awful.key(
-        {Mod1, Control},
+        {"Mod1", "Control"},
         "s", 
         function() awful.spawn.with_shell("~/.password-store/passmenu") end,
         {description = "Show the password menu", group = "custom"})
