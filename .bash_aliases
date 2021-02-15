@@ -18,6 +18,9 @@ alias edit-awesome='vim ~/.config/awesome/rc.lua && source ~/.bashrc'
 alias edit-gitsync='vim ~/.config/wholteza/gitsync/run.sh && source ~/.bashrc'
 alias edit-vim='vim ~/.vimrc && source ~/.bashrc'
 alias edit-tmux='vim ~/.tmux.conf && source ~/.bashrc'
+alias edit-installer-apt='vim ~/.config/wholteza/installer/package-definitions/ubuntu-apt-packages'
+alias edit-installer-snap='vim ~/.config/wholteza/installer/package-definitions/ubuntu-snap-packages'
+alias run-installer='python3 ~/.config/wholteza/installer/install.py ubuntu'
 
 # Screenshots
 alias snip='scrot -s ~/Pictures/Screenshots/scrot-%Y-%m-%d-%H_%M.png'
