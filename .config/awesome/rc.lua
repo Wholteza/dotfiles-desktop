@@ -583,3 +583,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart Applications
 awful.spawn.with_shell("~/.config/wholteza/fehbg/run.sh")
+awful.spawn.with_shell("compton")
