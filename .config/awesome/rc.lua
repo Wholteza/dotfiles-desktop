@@ -356,7 +356,7 @@ globalkeys = gears.table.join(
         {description = "Show the password menu", group = "custom"}),
     -- Screen snip
     awful.key(
-        {"Shift", "Mod4"},
+        {"Shift", modkey},
         "s", 
         function() awful.spawn.with_shell("snip") end,
         {description = "Take a screen snip and save to ~/Pictures/Screenshots", group = "custom"})
