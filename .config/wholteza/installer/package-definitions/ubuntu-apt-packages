@@ -2,6 +2,7 @@ feh
 vim-gtk
 tmux
 wget
+rofi
 
 # Yubikey software
 gnupg2
