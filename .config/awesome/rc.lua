@@ -351,16 +351,16 @@ globalkeys = gears.table.join(
     -- Passmenu
     awful.key(
         {"Mod1", "Control"},
-        "s", 
+        "s",
         function() awful.spawn.with_shell("~/.password-store/passmenu") end,
         {description = "Show the password menu", group = "custom"}),
     -- Screen snip
     awful.key(
         {"Shift", modkey},
-        "s", 
+        "s",
         function() awful.spawn.with_shell("snip") end,
         {description = "Take a screen snip and save to ~/Pictures/Screenshots", group = "custom"})
-    
+
 )
 
 clientkeys = gears.table.join(
