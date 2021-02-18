@@ -49,7 +49,8 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+-- beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init("~/.config/awesome/themes/nord.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "x-terminal-emulator"
@@ -62,6 +63,17 @@ editor_cmd = terminal .. " -e " .. editor
 -- I suggest you to remap Mod4 to another key using xmodmap or other tools.
 -- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
+
+terminaltag = "Terminal"
+browsertag = "Browser"
+codetag = "Code"
+chatstag = "Chats"
+mediatag = "Media"
+sixtag = "6"
+seventag = "7"
+eighttag = "8"
+ninetag = "9"
+
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -187,7 +199,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ terminaltag, browsertag, codetag, chatstag, mediatag, sixtag, seventag, eighttag, ninetag }, s, awful.layout.layouts[1])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -598,10 +610,42 @@ client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
+client.connect_signal("focus", function(c) c.border_color = beautiful.border_marked end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- Autostart Applications
-awful.spawn.with_shell("~/.config/wholteza/fehbg/run.sh")
-awful.spawn.with_shell("compton")
+-- Spawn function to put things on correct tag
+local function spawn_once(command, class, tag)
+	if tag ~= nil then
+		-- create move callback
+		local callback
+		callback = function(c)
+			if c.class == class then
+				c:move_to_tag(tag)
+				client.disconnect_signal("manage", callback)
+			end
+		end
+		client.connect_signal("manage", callback)
+	end
+	-- now check if not already running!
+	local findme = command
+	local firstspace = findme:find(" ")
+	if firstspace then
+		findme = findme:sub(0, firstspace-1)
+	end
+	-- finally run it
+	awful.util.spawn_with_shell("pgrep -u $USER -x " .. findme .. " > /dev/null || exec " .. command)
+end
+
+-- Autostart background applications
+spawn_once("~/.config/wholteza/fehbg/run.sh")
+spawn_once("compton")
+
+-- Autostart foreground applications
+-- spawn_once("terminator", "", )
+-- spawn_once("chromium", "", )
+-- spawn_once("chromium", "", )
+-- spawn_once("code", "Code", )
+-- spawn_once("spotify", "", )
+-- spawn_once("telegram-desktop", "", )
+-- spawn_once("signal-desktop", "", )
