@@ -649,3 +649,5 @@ spawn_once("compton")
 -- spawn_once("spotify", "", )
 -- spawn_once("telegram-desktop", "", )
 -- spawn_once("signal-desktop", "", )
+awful.key({ modkey, "Shift"   }, "Next",   function (c) c:relative_move( 20,  20, -40, -40) end),
+awful.key({ modkey, "Shift"   }, "Prior",  function (c) c:relative_move(-20, -20,  40,  40) end),
