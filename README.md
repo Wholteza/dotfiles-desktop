@@ -13,4 +13,5 @@ Right now only support for ubuntu 20.04 since that is what is use.
 
 ## Manual steps
 - [Telegram theme](https://github.com/noaccOS/telegram-nord-theme)
-- [Chrome theme](https://github.com/ralphSQ/Nord-minimal-functional-fox)
+- [Chrome theme](https://chrome.google.com/webstore/detail/nord/abehfkkfjlplnjadfcjiflnejblfmmpj)
+- [Discord theme](https://github.com/orblazer/discord-nordic)
