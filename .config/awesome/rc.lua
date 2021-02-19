@@ -371,8 +371,9 @@ globalkeys = gears.table.join(
         {"Shift", modkey},
         "s",
         function() awful.spawn.with_shell("snip") end,
-        {description = "Take a screen snip and save to ~/Pictures/Screenshots", group = "custom"})
-
+        {description = "Take a screen snip and save to ~/Pictures/Screenshots", group = "custom"}),
+    awful.key({ modkey, "Shift"   }, "Next",   function (c) c:relative_move( 20,  20, -40, -40) end),
+    awful.key({ modkey, "Shift"   }, "Prior",  function (c) c:relative_move(-20, -20,  40,  40) end),
 )
 
 clientkeys = gears.table.join(
@@ -649,5 +650,3 @@ spawn_once("compton")
 -- spawn_once("spotify", "", )
 -- spawn_once("telegram-desktop", "", )
 -- spawn_once("signal-desktop", "", )
-awful.key({ modkey, "Shift"   }, "Next",   function (c) c:relative_move( 20,  20, -40, -40) end),
-awful.key({ modkey, "Shift"   }, "Prior",  function (c) c:relative_move(-20, -20,  40,  40) end),
