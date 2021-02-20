@@ -1,5 +1,21 @@
-/bin/bash: keycode: command not found
-de  24 =            q             Q       adiaeresis        Adiaeresis
+! xmodmap for the Colemak-SE layout.
+! 2018, github.com/motform/colemak-se. GPL3.
+
+! keycode  49 =        grave    asciitilde       dead_tilde        asciitilde
+! keycode  10 =            1        exclam       exclamdown       onesuperior
+! keycode  11 =            2            at        masculine       twosuperior
+! keycode  12 =            3    numbersign      ordfeminine     threesuperior
+! keycode  13 =            4        dollar             cent          sterling
+! keycode  14 =            5       percent         EuroSign               yen
+! keycode  15 =            6   asciicircum          hstroke           Hstroke
+! keycode  16 =            7     ampersand              eth               ETH
+! keycode  17 =            8      asterisk            thorn             THORN
+! keycode  18 =            9     parenleft   leftsinglequotemark   leftdoublequotemark
+! keycode  19 =            0    parenright  rightsinglequotemark   rightdoublequotemark
+! keycode  20 =        minus    underscore           endash            emdash
+! keycode  21 =        equal          plus         multiply          division
+
+keycode  24 =            q             Q       adiaeresis        Adiaeresis
 keycode  25 =            w             W            aring             Aring
 keycode  26 =            f             F           atilde            Atilde
 keycode  27 =            p             P           oslash          Ooblique
@@ -256,7 +272,3 @@ clear Lock
 !keycode 253 =
 !keycode 254 =
 !keycode 255 =
-xmodmap:  unable to open file 'the' for reading
-xmodmap:  unable to open file 'Colemak-SE' for reading
-xmodmap:  unable to open file 'layout.' for reading
-xmodmap:  4 errors encountered, aborting.
