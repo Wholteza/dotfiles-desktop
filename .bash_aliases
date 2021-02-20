@@ -29,5 +29,5 @@ alias snip='scrot -s ~/Pictures/Screenshots/scrot-%Y-%m-%d-%H_%M.png'
 alias gitsync='~/.config/wholteza/gitsync/run.sh'
 
 # Keyboard layouts
-alias kb-q='setxkbmap se && xset -r 66'
-alias kb-c='setxkbmap se && xmodmap ~/.config/xmodmap/xmodmap.colemak-se && xset -r 66'
+alias kb-q='setxkbmap se; xset -r 66'
+alias kb-c='setxkbmap -v colemak-se && xset -r 66'
