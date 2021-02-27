@@ -19,4 +19,4 @@ eval "$(pyenv virtualenv-init -)"
 ~/.config/wholteza/gitsync/run.sh
 
 #Start tmux
-tmux
+#tmux
