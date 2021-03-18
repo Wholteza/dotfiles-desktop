@@ -18,5 +18,7 @@ eval "$(pyenv virtualenv-init -)"
 # Update git repos on start
 ~/.config/wholteza/gitsync/run.sh
 
+kb-c
+
 #Start tmux
 #tmux
